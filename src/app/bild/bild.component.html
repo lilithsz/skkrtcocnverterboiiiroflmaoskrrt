@@ -1,0 +1,14 @@
+<p>Bild hochladen!</p>
+
+<form action="http://localhost:80/upload.php" method="POST" enctype="multipart/form-data" (submit)="onUpload($event)">
+  <input type="file" name="image" accept=".png,.jpg" (change)="onFileSelect($event)">
+  <input type="submit" value="Upload">
+</form>
+
+<ul>
+  <li *ngFor="let file of files">
+    <img src="http://localhost:80/img/{{file}}.jpg" />
+    <a href="http://localhost:80/img/{{file}}.jpg" download>JPG</a>
+    <a href="http://localhost:80/img/{{file}}.png" download>PNG</a>
+  </li>
+</ul>
